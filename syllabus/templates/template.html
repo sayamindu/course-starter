@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Based on https://github.com/jgm/pandoc-templates/blob/master/default.html5 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    $for(author-meta)$
+    <meta name="author" content="$author-meta$" />
+    $endfor$
+    $if(date-meta)$
+    <meta name="dcterms.date" content="$date-meta$" />
+    $endif$
+    $if(keywords)$
+    <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$" />
+    $endif$
+    <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" crossorigin="anonymous">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Merriweather+Sans:ital,wght@0,400;0,700;0,800;1,400;1,800&display=swap" rel="stylesheet">
+
+
+    <style>
+        body {
+            font-family: 'EB Garamond', serif;
+            padding-top: 70px;
+            position: relative;
+            font-size: 1.3rem;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Merriweather Sans', sans-serif;
+            font-style: normal;
+            font-weight: 700;
+            padding-top: 1em;
+        }
+
+        h1 {
+            font-size: 1.6rem;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+        }
+
+        blockquote {
+            padding: 1em;
+            background: #ededed;
+            font-style: italic;
+        }
+
+        .navbar {
+            font-family: 'Merriweather Sans', sans-serif;
+            font-style: normal;
+            font-weight: 800;
+        }
+
+        footer {
+            font-family: 'Merriweather Sans', sans-serif;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 0.9rem;
+        }
+
+    </style>
+
+  </head>
+  <body data-spy="scroll" data-offset="70" data-target="#main-nav">
+      <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light" id="main-nav">
+        <!-- Navbar content -->
+        $if(title)$
+        <a class="navbar-brand" href="index.html">
+        $if(indexpage)$
+        $else$
+            <img width="30" height="30" class="d-inline-block align-top" alt="Back" src='data:image/svg+xml;utf8,<svg class="bi bi-arrow-left-square-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm6.354 10.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L6.207 7.5H11a.5.5 0 0 1 0 1H6.207l2.147 2.146z"/></svg>'>
+        $endif$
+        $title$
+        </a>
+        $endif$
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            $if(indexpage)$
+                $if(toc)$
+                $toc$
+                $endif$
+            $endif$
+        </div>
+      </nav>
+
+      <div class="container">
+          $body$
+      </div>
+
+      <footer class="bg-light footer text-center text-secondary">
+          $if(institution)$
+          $institution$
+          <br>
+          $endif$
+          $if(term)$
+          $term$
+          $endif$
+      </footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script src="js/pandocbridge.js"></script>
+  </body>
+</html>
