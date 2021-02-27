@@ -2,7 +2,7 @@
 
 This is the "starter pack" that I use for my course material. The `slides` directory contains a template for slides, and the `syllabus` directory contains a template for a syllabus.
 
-The templates are written in [Markdown](https://en.wikipedia.org/wiki/Markdown) and are processed with [Pandoc](https://pandoc.org/) to generate self-contained HTML files that you can put in your course website and/or share with students.
+The templates are written in [Markdown](https://en.wikipedia.org/wiki/Markdown) and are processed with [Pandoc](https://pandoc.org/) to generate PDF and self-contained HTML files that you can put in your course website and/or share with students.
 
 In order to use the templates, you will need 
  * Pandoc
@@ -22,6 +22,8 @@ The file `slides/common.mk` has a few variables at the top which you may want to
 The `syllabus` directory contains a template syllabus in the file `index.md`.
 
 The `Makefile` in the `syllabus` directory contains some variables such as course number that you may want to change.
+
+Typing `make` in the syllabus directory will generate a PDF version of the syllabus along with a self-contained HTML version. The PDF generation process requires LaTeX. More information on installing LaTeX for use with Pandoc can be found in Pandoc's [installation documentation](https://pandoc.org/installing.html).
 
 ### Generating course schedules
 
